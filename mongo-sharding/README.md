@@ -5,13 +5,17 @@
 Запускаем mongodb и приложение
 
 ```shell
-docker compose up -d
+cd mongo-sharding
+docker compose -f compose.yaml up -d
 ```
 
 Заполняем mongodb данными
 
 ```shell
-./scripts/mongo-init.sh
+./scripts/mongo-config-init.sh
+./scripts/mongo-shard1-init.sh
+./scripts/mongo-shard2-init.sh
+./scripts/mongo-router-init.sh
 ```
 
 ## Как проверить
